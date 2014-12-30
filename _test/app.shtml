@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--#include virtual="_test/head.shtml"-->
+  </head>
+
+  <body ng-app="myApp" class="light">
+    <div class="container" ng-controller="ContentCtrl">
+
+      <!-- Main navigation at top of page -->
+      <!--#include virtual="_test/page-header.shtml"-->
+
+      <!-- Holds the main content of the page -->
+      <div id="page-body-viewport">
+        <div id="page-body-content">
+          <div id="home">
+            <!--#include virtual="pages/home.shtml"-->
+          </div>
+          <div id="projects">
+            <!--#include virtual="pages/home.shtml"-->
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional info at bottom of page -->
+      <!--#include virtual="_test/page-footer.shtml"-->
+
+    </div>
+  </body>
+</html>

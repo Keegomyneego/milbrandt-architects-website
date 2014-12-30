@@ -1,0 +1,78 @@
+// Variables
+$header-bg-color: hsl(0, 0%, 50%)
+$header-icon-color: hsl(0, 0%, 80%)
+
+// Mixins
+
+=set-body-theme( $hue, $saturation, $lightness, $opacity )
+  background-image: url( "../assets/images/background-wood-dark.png" )
+  background-color: hsl( $hue, 0%, $lightness )
+  color:            hsl( $hue, 0%, 98% )
+
+  /* Input boxes */
+
+  ::-webkit-input-placeholder
+    color: hsl(0, 0%, 80%)
+
+  /* Searchbox */
+
+  *[role="search"]
+    > *
+      background-color: $header-bg-color
+      border-color:     $header-icon-color
+      color:            $header-icon-color
+
+  /* Navigation background */
+
+  .navbar-default
+    background-color: hsla( $hue, 0%, $lightness, $opacity )
+    border-color:     transparent
+
+    /* Mobile toggles */
+
+    .navbar-toggle
+      border-color:     transparent
+
+      &:hover, &:focus
+        background-color: $header-bg-color
+
+      .icon-bar
+        background-color: $header-icon-color
+
+      .glyphicon
+        color:            $header-icon-color
+
+    /* Navigation text-only color */
+
+    .navbar-text
+      color: $header-icon-color
+
+    /* Navigation tabs */
+
+    .navbar-nav
+      > li
+
+        .dropdown-menu
+          background-color: hsla( $hue, 0%, $lightness, $opacity )
+
+        a
+          background-color: transparent !important
+          color:            hsl( $hue, 0%, ($lightness + 100%) / 2 )
+
+          &:hover, &:focus
+            color:            hsl( $hue, 0%, 100% )
+
+        &.active
+          border-top-color:     hsl(  $hue, $saturation, $lightness )
+
+          > a
+            color:            hsl( $hue, 0%, 100% )
+
+
+// Themes
+body
+  &.light
+    +set-body-theme( 210, 65%, 80%, 0.75 )
+  &.dark
+    +set-body-theme( 210, 65%, 40%, 0.75 )
+
