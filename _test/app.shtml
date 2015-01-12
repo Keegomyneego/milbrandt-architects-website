@@ -16,8 +16,26 @@
           <div id="home">
             <!--#include virtual="pages/home.shtml"-->
           </div>
+          <div id="team">
+            <!--#include virtual="pages/team.shtml"-->
+          </div>
+          <div id="opportunities">
+            <!--#include virtual="pages/opportunities.shtml"-->
+          </div>
+          <div id="services">
+            <!--#include virtual="pages/services.shtml"-->
+          </div>
+          <div id="vision">
+            <!--#include virtual="pages/vision.shtml"-->
+          </div>
           <div id="projects">
-            <!--#include virtual="pages/home.shtml"-->
+            <!--#include virtual="pages/projects.shtml"-->
+          </div>
+          <div id="news">
+            <!--#include virtual="pages/news.shtml"-->
+          </div>
+          <div id="contact">
+            <!--#include virtual="pages/contact.shtml"-->
           </div>
         </div>
       </div>

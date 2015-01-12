@@ -6,3 +6,4 @@ $.getScript "scripts/plugins/scrollTo.js"
 
 $.ajaxSetup async: true
 $.getScript "scripts/animations.js"
+$.getScript "scripts/google-search.js"

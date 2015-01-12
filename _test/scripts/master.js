@@ -17,4 +17,6 @@
 
   $.getScript("scripts/animations.js");
 
+  $.getScript("scripts/google-search.js");
+
 }).call(this);
