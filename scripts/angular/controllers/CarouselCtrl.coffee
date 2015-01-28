@@ -11,5 +11,3 @@ angular.module 'myApp'
       image: "assets/images/cat3.jpg",
       text: "Cat 3"
     ]
-
-    console.log $scope.slides

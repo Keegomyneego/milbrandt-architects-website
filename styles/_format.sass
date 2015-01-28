@@ -11,8 +11,9 @@ $media-medium:                992px
 $media-large:                 1200px
 $navbar-spacing:              20px
 $navbar-height:               50px
-$nav-tab-border-width:        5px
+$nav-tab-border-width:        3px
 $nav-tab-spacing:             20px
+$border-radius:               50px
 
 // Mixins
 
@@ -37,7 +38,7 @@ $nav-tab-spacing:             20px
 body, #page-header, #page-footer
   margin:         0px
 body
-  padding:    ($navbar-spacing + $navbar-height) 0px
+  padding:    ($navbar-spacing + $navbar-height) 0px $navbar-spacing 0px
 #page-header
   margin-bottom:  $navbar-spacing
 #page-footer
@@ -49,7 +50,7 @@ body
   overflow:       hidden
 
   @media (min-width: $media-small)
-    border-radius:  6px
+    border-radius:  $border-radius
 
 
 /****************************************
@@ -122,6 +123,32 @@ body
 
   @media (min-width: $media-medium)
     height:         680px
+
+
+// Carousel
+
+.carousel
+  overflow: hidden
+
+  .carousel-control.left
+    border-top-left-radius: $border-radius
+    border-bottom-left-radius: $border-radius
+
+  .carousel-control.right
+    border-top-right-radius: $border-radius
+    border-bottom-right-radius: $border-radius
+
+  .carousel-inner
+    height: 100%
+
+    .item
+      height: 100%
+
+      > *
+        border-radius: $border-radius
+
+        img
+          width: 100%
 
 
 /****************************************

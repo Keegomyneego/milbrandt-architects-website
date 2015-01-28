@@ -9,12 +9,14 @@
 
   $.getScript("scripts/angular/controllers/ContentCtrl.js");
 
-  $.getScript("scripts/plugins/scrollTo.js");
-
   $.ajaxSetup({
     async: true
   });
 
+  $.getScript("scripts/plugins/scrollTo.js");
+
   $.getScript("scripts/animations.js");
+
+  $.getScript("scripts/google-search.js");
 
 }).call(this);

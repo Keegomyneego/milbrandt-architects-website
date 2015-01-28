@@ -1,5 +1,8 @@
 angular.module 'myApp'
   .controller 'ContentCtrl', ($scope)->
+
+    # Navigation collapse controls
+
     $scope.topNavCollapsed = true
     $scope.bottomNavCollapsed = true
 

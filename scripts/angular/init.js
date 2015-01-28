@@ -1,6 +1,8 @@
 (function() {
-  angular.module('myApp', ['ngRoute', 'ui.bootstrap']).config(function($routeProvider, $locationProvider) {
-    return $locationProvider.html5Mode(true);
-  });
+  angular.module('myApp', ['ui.bootstrap']).config([
+    '$locationProvider', function($locationProvider) {
+      return $locationProvider.html5Mode(true);
+    }
+  ]);
 
 }).call(this);

@@ -1,0 +1,28 @@
+<div id="page-body-viewport">
+  <div id="page-body-content">
+    <div id="home">
+      <!--#include virtual="pages/home.shtml"-->
+    </div>
+    <div id="team">
+      <!--#include virtual="pages/profile/team.shtml"-->
+    </div>
+    <div id="opportunities">
+      <!--#include virtual="pages/profile/opportunities.shtml"-->
+    </div>
+    <div id="services">
+      <!--#include virtual="pages/profile/services.shtml"-->
+    </div>
+    <div id="vision">
+      <!--#include virtual="pages/profile/vision.shtml"-->
+    </div>
+    <div id="projects">
+      <!--#include virtual="pages/projects/projects.shtml"-->
+    </div>
+    <div id="news">
+      <!--#include virtual="pages/news.shtml"-->
+    </div>
+    <div id="contact">
+      <!--#include virtual="pages/contact.shtml"-->
+    </div>
+  </div>
+</div>

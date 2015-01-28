@@ -10,11 +10,11 @@
       <ul class="nav navbar-nav">
         <li>
           <p class="navbar-text navbar-glyphicon">
-            <span class="glyphicon glyphicon-earphone"></span>
+            <span class="glyphicon glyphicon-envelope"></span>
           </p>
           <p class="navbar-text">
             <span>
-              425.454.7130
+              info@milbrandtarch.com
             </span>
           </p>
         </li>
@@ -32,11 +32,11 @@
         </li>
         <li>
           <p class="navbar-text navbar-glyphicon">
-            <span class="glyphicon glyphicon-envelope"></span>
+            <span class="glyphicon glyphicon-earphone"></span>
           </p>
           <p class="navbar-text">
             <span>
-              info@milbrandtarch.com
+              425.454.7130
             </span>
           </p>
         </li>
