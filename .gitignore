@@ -1,3 +1,4 @@
 _archive/*
-prepros*
+
+prepros.cfg
 .sass*
