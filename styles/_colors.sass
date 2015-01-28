@@ -1,26 +1,51 @@
 // Variables
-$header-bg-color: hsl(0, 0%, 50%)
-$header-icon-color: hsl(0, 0%, 80%)
 
-// Mixins
+// DARK - 40%
+//$header-bg-color:               hsl( 0, 0%, 50% ) 40 = +-0
+//$header-text-color:             hsl( 0, 0%, 80% ) 85 = + 45
+//$header-text-highlight-color:   hsl( 0, 0%, 100% )
+
+//$body-text-color:               hsl( 0, 0%, 98% )
+
+// LIGHT - 85%
+//$header-bg-color:               hsl( 0, 0%, 80% ) 85 = +-0
+//$header-text-color:             hsl( 0, 0%, 40% ) 40 = - 45
+//$header-text-highlight-color:   hsl( 0, 0%, 10% )
+
+//$body-text-color:               hsl( 0%, 0%, 50% )
+
+
+$body-text-color:                 hsl( 0%, 0%, 50% )
+
+/***********************
+ * Mixins
+ ***********************/
 
 =set-body-theme( $hue, $saturation, $lightness, $opacity )
-  background-image: url( "../assets/images/background-wood-dark.png" )
-  background-color: hsl( $hue, 0%, $lightness )
-  color:            hsl( $hue, 0%, 98% )
+  $header-bg-color:             hsl( 0, 0%, $lightness )
+  $header-text-color:           hsl( 0, 0%, 125% - $lightness )
+  $header-text-highlight-color: hsl( 0%, 0%, 180% - 2 * $lightness )
+
+  background-color: hsl( $hue, 0%, 100% )
+  color:            hsl( $hue, 50%, 50% )
+
+  /* Shadows */
+
+  #page-body-viewport, #page-footer, #page-header
+    box-shadow:       0px 0px 10px -1px hsl(0, 0%, 25%)
 
   /* Input boxes */
 
   ::-webkit-input-placeholder
-    color: hsl(0, 0%, 80%)
+    color:            $header-text-color
 
   /* Searchbox */
 
   *[role="search"]
     > *
       background-color: $header-bg-color
-      border-color:     $header-icon-color
-      color:            $header-icon-color
+      border-color:     $header-text-color
+      color:            $header-text-color
 
   /* Navigation background */
 
@@ -37,15 +62,15 @@ $header-icon-color: hsl(0, 0%, 80%)
         background-color: $header-bg-color
 
       .icon-bar
-        background-color: $header-icon-color
+        background-color: $header-text-color
 
       .glyphicon
-        color:            $header-icon-color
+        color:            $header-text-color
 
     /* Navigation text-only color */
 
     .navbar-text
-      color: $header-icon-color
+      color: $header-text-color
 
     /* Navigation tabs */
 
@@ -57,22 +82,48 @@ $header-icon-color: hsl(0, 0%, 80%)
 
         a
           background-color: transparent !important
-          color:            hsl( $hue, 0%, ($lightness + 100%) / 2 )
+          color:            $header-text-color
 
           &:hover, &:focus
-            color:            hsl( $hue, 0%, 100% )
+            color:            $header-text-highlight-color
 
         &.active
-          border-top-color:     hsl(  $hue, $saturation, $lightness )
+          border-top-color: hsl(  $hue, $saturation, 40% )
 
           > a
-            color:            hsl( $hue, 0%, 100% )
+            color:            $header-text-highlight-color
+
+  /* Viewport */
+
+  #page-body-content > *
+    background-image: url( "../assets/images/wood_texture.jpg" )
 
 
-// Themes
+/***********************
+ * Themes
+ ***********************/
+
 body
+
   &.light
-    +set-body-theme( 210, 65%, 80%, 0.75 )
+    background-image: url( "../assets/images/backgrounds/bronze.png" )
+    +set-body-theme( 210, 65%, 85%, 0.75 )
+    
+    /* #page-header:before
+      content:  ""
+      background: url("../assets/images/backgrounds/light/light-heavypaper.png")
+      opacity:  0.75
+      float:  left
+      width:  100%
+      height: 100% */
+
+    #page-header
+      background-color: hsla(0, 0%, 85%, 0.75)
+
   &.dark
+    background-image: url( "../assets/images/backgrounds/dark/dark-planingwood.png" )
     +set-body-theme( 210, 65%, 40%, 0.75 )
+    
+    #page-header
+      background-image: url("../assets/images/backgrounds/dark/dark-heavypaper.png")
 
