@@ -1,7 +1,11 @@
 (function() {
   $.ajaxSetup({
-    async: false
+    async: true
   });
+
+  $.getScript("scripts/jquery.js");
+
+  $.getScript("scripts/bootstrap/bootstrap.js");
 
   $.getScript("scripts/angular/init.js");
 
@@ -13,10 +17,14 @@
     async: true
   });
 
-  $.getScript("scripts/plugins/scrollTo.js");
-
   $.getScript("scripts/animations.js");
 
   $.getScript("scripts/google-search.js");
+
+  $.getScript("scripts/angular/angular-touch.js");
+
+  $.getScript("scripts/angular/angular-carousel.js");
+
+  $.getScript("scripts/plugins/scrollTo.js");
 
 }).call(this);

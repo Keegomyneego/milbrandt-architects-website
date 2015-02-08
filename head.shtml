@@ -11,15 +11,13 @@
 <!-- Bootstrap Core Framework -->
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- AngularJS Framework (requires jQuery) -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-
-<!-- Custom Styles -->
-<link rel="stylesheet" type="text/css" href="assets/fonts/fonts.css">
+<!-- Load all other styles -->
 <link rel="stylesheet" type="text/css" href="styles/master.css" />
 
-<!-- Custom Scripts (requires jQuery) -->
+<!-- jQuery -->
+<script src="scripts/jquery.js"></script>
+
+<!-- Load all other scripts (requires jQuery) -->
 <script src="scripts/master.js"></script>
 
 
