@@ -1,8 +1,7 @@
 # requires jquery
 
 $(document).ready ->
-  "use strict"
-
+  
   # Ensure the view of the current page stays consistent while resizing
   $( window ).resize ->
     $( "#page-header .nav .active a:link" ).click()
@@ -16,8 +15,8 @@ $(document).ready ->
 
         # Pause the carousel when scrolling away and cycle when scrolling to it
         containsCarousel = $( target ).has( ".carousel" ).length isnt 0
-        $( ".carousel" ).carousel if containsCarousel then "pause" else "cycle"
-        console.log if containsCarousel then "pause" else "cycle"
+        $( ".carousel" ).carousel? if containsCarousel then "pause" else "cycle"
+        log if containsCarousel then "pause" else "cycle"
 
         # First level nav tabs get styled with the "active" class
         $( "#page-header .nav > li" ).removeClass "active"

@@ -1,30 +1,25 @@
 (function() {
-  $.ajaxSetup({
-    async: true
+  $.getScript("scripts/utils.js", function() {
+    log.enable();
+    getScript("scripts/angular/angular.js", function() {
+      getScript("scripts/bootstrap/bootstrap.js");
+      getScript("scripts/bootstrap/ui-bootstrap-tpls-0.12.0.js");
+      return getScript("scripts/angular/angular-touch.js", function() {
+        return getScript("scripts/angular/angular-carousel.js", function() {
+          return getScript("scripts/angular/init.js", function() {
+            return getScript("scripts/angular/controllers/ContentCtrl.js", function() {
+              log('bootstrapping myApp', function() {
+                return angular.bootstrap(document, ['myApp']);
+              });
+              return log('setup complete');
+            });
+          });
+        });
+      });
+    });
+    return getScript("scripts/plugins/scrollTo.js", function() {
+      return getScript("scripts/animations.js");
+    });
   });
-
-  $.getScript("scripts/jquery.js");
-
-  $.getScript("scripts/bootstrap/bootstrap.js");
-
-  $.getScript("scripts/angular/init.js");
-
-  $.getScript("scripts/angular/controllers/CarouselCtrl.js");
-
-  $.getScript("scripts/angular/controllers/ContentCtrl.js");
-
-  $.ajaxSetup({
-    async: true
-  });
-
-  $.getScript("scripts/animations.js");
-
-  $.getScript("scripts/google-search.js");
-
-  $.getScript("scripts/angular/angular-touch.js");
-
-  $.getScript("scripts/angular/angular-carousel.js");
-
-  $.getScript("scripts/plugins/scrollTo.js");
 
 }).call(this);
