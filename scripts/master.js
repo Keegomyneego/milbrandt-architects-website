@@ -18,9 +18,11 @@
       });
     });
     return getScript("scripts/jquery-ui.js", function() {
-      return getScript("scripts/plugins/mutate.js", function() {
-        return getScript("scripts/plugins/scrollTo.js", function() {
-          return getScript("scripts/animations.js");
+      return getScript("scripts/plugins/mutate.events.js", function() {
+        return getScript("scripts/plugins/mutate.js", function() {
+          return getScript("scripts/plugins/scrollTo.js", function() {
+            return getScript("scripts/animations.js");
+          });
         });
       });
     });

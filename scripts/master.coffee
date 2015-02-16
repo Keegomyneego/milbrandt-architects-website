@@ -26,9 +26,10 @@ $.getScript "scripts/utils.js", ->
             log 'setup complete'
 
   getScript "scripts/jquery-ui.js", ->
-    getScript "scripts/plugins/mutate.js", ->
-      getScript "scripts/plugins/scrollTo.js", ->
-        getScript "scripts/animations.js"
+    getScript "scripts/plugins/mutate.events.js", ->
+      getScript "scripts/plugins/mutate.js", ->
+        getScript "scripts/plugins/scrollTo.js", ->
+          getScript "scripts/animations.js"
   
   # $.getScript "scripts/google-search.js"
 

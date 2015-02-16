@@ -1,14 +1,13 @@
-attempt ->
-  angular.module 'myApp'
-    .controller 'ContentCtrl', ($scope)->
+angular.module 'myApp'
+  .controller 'ContentCtrl', ($scope)->
 
-      # Navigation collapse controls
+    # Navigation collapse controls
 
-      $scope.topNavCollapsed = true
-      $scope.bottomNavCollapsed = true
+    $scope.topNavCollapsed = true
+    $scope.bottomNavCollapsed = true
 
-      $scope.toggleTopNav = ->
-        $scope.topNavCollapsed = !$scope.topNavCollapsed
+    $scope.toggleTopNav = ->
+      $scope.topNavCollapsed = !$scope.topNavCollapsed
 
-      $scope.toggleBottomNav = ->
-        $scope.bottomNavCollapsed = !$scope.bottomNavCollapsed
+    $scope.toggleBottomNav = ->
+      $scope.bottomNavCollapsed = !$scope.bottomNavCollapsed
