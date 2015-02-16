@@ -4,7 +4,7 @@
     <!--#include virtual="head.shtml"-->
   </head>
 
-  <body class="light">
+  <body class="dark">
     <div class="container" ng-controller="ContentCtrl">
 
       <!-- Main navigation at top of page -->

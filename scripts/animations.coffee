@@ -3,13 +3,20 @@
 $(document).ready ->
   
   # Ensure the view of the current page stays consistent while resizing
-  $( window ).resize ->
-    $( "#page-header .nav .active a:link" ).click()
+  $( '#page-body-viewport' ).mutate 'height width', ->
+      target = window.location.hash
+      target = "#home" if target is ""
 
-  # Navbar effects
+      # Scroll the the target page into view immediately
+      offsetTop = $( "#page-body-viewport" ).offset().top
+      $( "#page-body-viewport" ).scrollTo target,
+        offsetTop: offsetTop
+        duration: 0
+
+  # Navbar cligk actions
   $( "#page-header .nav > li a:link" ).on "click", (event)->
 
-      # Viewport scrolling
+      # If the tab has a valid target...
       target = this.href.match( "#.*$" )[0]
       if target.length > 0 and target isnt "#"
 
@@ -18,15 +25,17 @@ $(document).ready ->
         $( ".carousel" ).carousel? if containsCarousel then "pause" else "cycle"
         log if containsCarousel then "pause" else "cycle"
 
-        # First level nav tabs get styled with the "active" class
-        $( "#page-header .nav > li" ).removeClass "active"
-        $( this ).parents("#page-header .nav > li").addClass "active"
+        # Nav tabs get styled with the "active" class
+        $( "#page-header .nav li" ).removeClass "active"
+        $( this ).parents("#page-header .nav li").addClass "active"
 
         # Scroll the the target page into view
         offsetTop = $( "#page-body-viewport" ).offset().top
         $( "#page-body-viewport" ).scrollTo target, offsetTop: offsetTop
 
-  # Set which nav tab should be active
+        false
+
+  # Simulate the user clicking the target on load
   target = window.location.hash
   target = "#home" if target is ""
   $( "a[href='" + target + "']" ).click()

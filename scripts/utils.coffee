@@ -1,14 +1,24 @@
+##
+# log( msg [, msg] )
+#   Shorthand for console.log that also indents when called inside
+#   a logged function. 
+# log( msg, f )
+#   Logs pre & post messages for the given function, and indents any
+#   nested log calls.
+##
 window.log = do ->
   $.extend ((msg, f) ->
     if not log.enabled
       return f?()
 
-    ind = ''
-    ind += '\t' for i in [0...log.indent]
+    indent = ''
+    indent += '\t' for i in [0...log.indent]
 
     if typeof f isnt 'function'
-      console.log.apply console, (ind + arg for arg in arguments)
+      # log( msg [, msg] )
+      console.log.apply console, (indent + arg for arg in arguments)
     else
+      # log( msg, f )
       log "#{msg}..."
       log.indent++
       attempt f
@@ -22,21 +32,28 @@ window.log = do ->
     disable: ->
       log.enabled = false
 
+##
+# Wraps given function in a try catch
+##
 window.attempt = (f) ->
   try
     f()
   catch error
     throw error
 
-window.getScript = (url, callback) ->
+##
+# Verbosely requests the script from a given url and calls either
+# the success or failure callbacks.
+##
+window.getScript = (url, succcess, failure) ->
   re = /([^\/]+\.[^\/]+)$/
-  file = re.exec(url)[0]
-  # log "loading #{file}..."
+  fileName = re.exec(url)[0]
   $.getScript url
     .done (data, status) ->
-      log "%cloading #{file}...#{status}", "color: lightgreen"
-      callback?()
+      log "%cloading #{fileName}...#{status}", "color: lightgreen"
+      succcess?()
     .fail (jqxhr, settings, exception) ->
-      log "%cloading #{file}...failed:", "color: red"
+      log "%cloading #{fileName}...failed:", "color: red"
       log "%c#{exception}", "color: red"
       log exception.stack
+      failure?()

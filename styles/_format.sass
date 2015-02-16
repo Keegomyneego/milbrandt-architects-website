@@ -81,16 +81,25 @@ body
 // Nav tabs
 
 #page-header
-  .navbar-nav > li
-    font-size:        larger
-    letter-spacing:   1px
+  .navbar-nav
+    > li
+      font-size:        larger
+      letter-spacing:   1px
 
-    &.active
-      border-top-width: $nav-tab-border-width
-      border-top-style: solid
+      &.active
+        border-top-width: $nav-tab-border-width
+        border-top-style: solid
 
-      > a
-        margin-top:       -$nav-tab-border-width
+        > a
+          margin-top:       -$nav-tab-border-width
+
+    .dropdown-menu > li
+      &.active
+        border-left-width: $nav-tab-border-width
+        border-left-style: solid
+
+        > a
+          margin-left:       -$nav-tab-border-width
 
 // Dimensions
 #page-header

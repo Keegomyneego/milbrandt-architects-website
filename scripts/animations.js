@@ -1,8 +1,17 @@
 (function() {
   $(document).ready(function() {
     var target;
-    $(window).resize(function() {
-      return $("#page-header .nav .active a:link").click();
+    $('#page-body-viewport').mutate('height width', function() {
+      var offsetTop, target;
+      target = window.location.hash;
+      if (target === "") {
+        target = "#home";
+      }
+      offsetTop = $("#page-body-viewport").offset().top;
+      return $("#page-body-viewport").scrollTo(target, {
+        offsetTop: offsetTop,
+        duration: 0
+      });
     });
     $("#page-header .nav > li a:link").on("click", function(event) {
       var containsCarousel, offsetTop, target, _base;
@@ -13,12 +22,13 @@
           _base.carousel(containsCarousel ? "pause" : "cycle");
         }
         log(containsCarousel ? "pause" : "cycle");
-        $("#page-header .nav > li").removeClass("active");
-        $(this).parents("#page-header .nav > li").addClass("active");
+        $("#page-header .nav li").removeClass("active");
+        $(this).parents("#page-header .nav li").addClass("active");
         offsetTop = $("#page-body-viewport").offset().top;
-        return $("#page-body-viewport").scrollTo(target, {
+        $("#page-body-viewport").scrollTo(target, {
           offsetTop: offsetTop
         });
+        return false;
       }
     });
     target = window.location.hash;
