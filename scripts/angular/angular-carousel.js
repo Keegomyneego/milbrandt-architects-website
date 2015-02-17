@@ -20,6 +20,24 @@ angular.module('angular-carousel', [
 
 angular.module('angular-carousel')
 
+.directive('imagey', function() {
+    return {
+        restrict: 'E',
+        template: '<div class="fullsize"'+
+                       'style="background-image:    url(\'{{src}}\'); ' +
+                              'background-repeat:   no-repeat; ' +
+                              'background-position: center; ' +
+                              'background-size:     contain;">' +
+                  '</div>',
+        link: function(scope, element, attrs) {
+            log(attrs.src);
+            scope.src = attrs.src;
+        }
+    };
+});
+
+angular.module('angular-carousel')
+
 .directive('rnCarouselAutoSlide', ['$interval', function($interval) {
   return {
     restrict: 'A',
@@ -69,7 +87,9 @@ angular.module('angular-carousel')
   };
 }]);
 
-angular.module('angular-carousel').run(['$templateCache', function($templateCache) {
+angular.module('angular-carousel')
+
+.run(['$templateCache', function($templateCache) {
   $templateCache.put('carousel-indicators.html',
       '<div class="rn-carousel-indicator">\n' +
         '<span ng-repeat="slide in slides" ng-class="{active: $index==index}" ng-click="goToSlide($index)">●</span>' +

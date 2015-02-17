@@ -12,18 +12,19 @@ $.getScript "scripts/utils.js", ->
   getScript "scripts/angular/angular.js", ->
     getScript "scripts/bootstrap/bootstrap.js"
     getScript "scripts/bootstrap/ui-bootstrap-tpls-0.12.0.js"
-    getScript "scripts/angular/angular-touch.js", ->
-      getScript "scripts/angular/angular-carousel.js", ->
+    getScript "scripts/polyfills/requestAnimationFrame.js", ->
+      getScript "scripts/angular/angular-touch.js", ->
+        getScript "scripts/angular/angular-carousel.js", ->
 
-        # Initialize AngularJS
-        getScript "scripts/angular/init.js", ->
+          # Initialize AngularJS
+          getScript "scripts/angular/init.js", ->
 
-          # Load controllers
-          # getScript "scripts/angular/controllers/CarouselCtrl.js"
-          getScript "scripts/angular/controllers/ContentCtrl.js", ->
-            log 'bootstrapping myApp', ->
-              angular.bootstrap document, ['myApp']
-            log 'setup complete'
+            # Load controllers
+            # getScript "scripts/angular/controllers/CarouselCtrl.js"
+            getScript "scripts/angular/controllers/ContentCtrl.js", ->
+              log 'bootstrapping myApp', ->
+                angular.bootstrap document, ['myApp']
+              log 'setup complete'
 
   getScript "scripts/jquery-ui.js", ->
     getScript "scripts/plugins/mutate.events.js", ->

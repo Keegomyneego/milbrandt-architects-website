@@ -4,14 +4,16 @@
     getScript("scripts/angular/angular.js", function() {
       getScript("scripts/bootstrap/bootstrap.js");
       getScript("scripts/bootstrap/ui-bootstrap-tpls-0.12.0.js");
-      return getScript("scripts/angular/angular-touch.js", function() {
-        return getScript("scripts/angular/angular-carousel.js", function() {
-          return getScript("scripts/angular/init.js", function() {
-            return getScript("scripts/angular/controllers/ContentCtrl.js", function() {
-              log('bootstrapping myApp', function() {
-                return angular.bootstrap(document, ['myApp']);
+      return getScript("scripts/polyfills/requestAnimationFrame.js", function() {
+        return getScript("scripts/angular/angular-touch.js", function() {
+          return getScript("scripts/angular/angular-carousel.js", function() {
+            return getScript("scripts/angular/init.js", function() {
+              return getScript("scripts/angular/controllers/ContentCtrl.js", function() {
+                log('bootstrapping myApp', function() {
+                  return angular.bootstrap(document, ['myApp']);
+                });
+                return log('setup complete');
               });
-              return log('setup complete');
             });
           });
         });
