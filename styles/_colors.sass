@@ -1,5 +1,9 @@
 // Variables
 
+$media-small:                 768px
+$media-medium:                992px
+$media-large:                 1200px
+
 // DARK - 40%
 //$header-bg-color:               hsl( 0, 0%, 50% ) 40 = +-0
 //$header-text-color:             hsl( 0, 0%, 80% ) 85 = + 45
@@ -22,9 +26,13 @@ $body-text-color:                 hsl( 0%, 0%, 50% )
  ***********************/
 
 =set-body-theme( $hue, $saturation, $lightness, $opacity )
-  $header-bg-color:             hsl( 0, 0%, $lightness )
+  $header-bg-color:             hsla( 0, 0%, $lightness, 1 )
   $header-text-color:           hsl( 0, 0%, 50% - 0.4 * ($lightness - 50%) )
   $header-text-highlight-color: hsl( 0%, 0%, 50% - 1.25 * ($lightness - 50%) )
+
+  /****************************************
+   * Global
+   ****************************************/
 
   background-color: hsl( $hue, 0%, 100% )
   color:            hsl( $hue, 50%, 50% )
@@ -32,12 +40,19 @@ $body-text-color:                 hsl( 0%, 0%, 50% )
   /* Shadows */
 
   #page-body-viewport, #page-footer, #page-header
-    box-shadow:       0px 0px 10px -1px hsl( 0, 0%, 0.25 * $lightness )
+    box-shadow: 0px 0px 10px -1px hsl( 0, 0%, 0.25 * $lightness )
+
+  /* Carousel */
+  .rn-carousel-control
+    color: white
+
+    &:hover
+      text-shadow: 0px 0px 10px hsl( 0, 0%, 0.15 * $lightness )
 
   /* Input boxes */
 
   ::-webkit-input-placeholder
-    color:            $header-text-color
+    color: $header-text-color
 
   /* Searchbox */
 
@@ -47,12 +62,17 @@ $body-text-color:                 hsl( 0%, 0%, 50% )
       border-color:     $header-text-color
       color:            $header-text-color
 
-  /* Navigation */
+  /****************************************
+   * Header
+   ****************************************/
 
-  .navbar-default
-    background-color: hsla( $hue, 0%, $lightness, $opacity )
+  #page-header
+    background-color: hsla( $hue, 0%, $lightness, 1 )
+    background-image: url( "../assets/images/backgrounds/bronze.png" )
     border-color:     transparent
-    font-family:      "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    @media (min-width: $media-small)
+      background-color: hsla( $hue, 0%, $lightness, 1 )
 
     /* Mobile toggles */
 
@@ -77,28 +97,36 @@ $body-text-color:                 hsl( 0%, 0%, 50% )
 
     .navbar-nav
       > li
+        border-color: transparent
 
         .dropdown-menu
           background-color: hsla( $hue, 0%, $lightness, $opacity )
 
         a
           background-color: transparent !important
-          color:            $header-text-color
+          color: $header-text-color
 
           &:hover, &:focus
-            color:            $header-text-highlight-color
+            color: $header-text-highlight-color
 
         &.active
-          border-top-color: hsl( $hue, $saturation, 40% )
+          border-color: transparent transparent transparent hsl( $hue, $saturation, 40% )
 
           > a
-            color:            $header-text-highlight-color
+            color: $header-text-highlight-color
+
+        @media (min-width: $media-small)
+          &.active
+            border-color: hsl( $hue, $saturation, 40% ) transparent transparent transparent
+
+  /****************************************
+   * Body Styles
+   ****************************************/
 
   /* Viewport */
 
   #page-body-content > *
     background-image: url( "../assets/images/wood_texture.jpg" )
-
 
 /***********************
  * Themes

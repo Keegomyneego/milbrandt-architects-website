@@ -1,14 +1,15 @@
-<ul rn-carousel class="fullsize" rn-carousel-buffered rn-carousel-controls rn-carousel-auto-slide>
+<ul rn-carousel class="fullsize" rn-carousel-buffered rn-carousel-controls>
   <li>
-      <imagey src="assets/images/group-shot.jpg">
+      <wallpaper src="assets/images/group-shot.jpg">
+        <div>CAT</div>
+      </wallpaper>
+  </li>
+  <li>
+      <wallpaper src="assets/images/cat2.jpg" alt="...">
       <div>CAT</div>
   </li>
   <li>
-      <img src="assets/images/cat2.jpg" alt="...">
-      <div>CAT</div>
-  </li>
-  <li>
-      <img src="assets/images/cat3.jpg" alt="...">
+      <wallpaper src="assets/images/cat3.jpg" alt="...">
       <div>CAT</div>
   </li>
 </ul>

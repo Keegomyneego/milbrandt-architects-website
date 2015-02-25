@@ -89,15 +89,11 @@ body
 #page-header
   .navbar-nav
     > li
-      font-size:        larger
-      letter-spacing:   1px
+      border-style: solid
+      border-width: $nav-tab-border-width
 
-      &.active
-        border-top-width: $nav-tab-border-width
-        border-top-style: solid
-
-        > a
-          margin-top:       -$nav-tab-border-width
+      > a
+        margin: -$nav-tab-border-width
 
     .dropdown-menu > li
       &.active
@@ -105,7 +101,7 @@ body
         border-left-style: solid
 
         > a
-          margin-left:       -$nav-tab-border-width
+          margin-left: -$nav-tab-border-width
 
 // Dimensions
 #page-header
@@ -141,6 +137,10 @@ body
 
 
 // Carousel
+
+.rn-carousel-control
+  +align-vertical-middle
+  position: absolute
 
 .carousel
   overflow: hidden
@@ -193,8 +193,6 @@ body
     width:    100%
 
     li
-      font-size:      smaller
-      letter-spacing: 1px
       padding:        0px
       margin:         0px 6px
       white-space:    nowrap
@@ -235,7 +233,6 @@ body
       border-top-right-radius:    0px
       border-bottom-right-radius: 0px
       float:        left
-      font-size:    inherit
       height:       24px
       width:        125px
       padding:      4px
@@ -250,7 +247,6 @@ body
       border-bottom-left-radius:  0px
       border-left-width:          0px
       display:      block
-      font-size:    inherit
       height:       24px
       padding:      0px 10px
 

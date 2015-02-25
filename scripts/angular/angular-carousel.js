@@ -20,8 +20,9 @@ angular.module('angular-carousel', [
 
 angular.module('angular-carousel')
 
-.directive('imagey', function() {
+.directive('wallpaper', function() {
     return {
+        scope: true,
         restrict: 'E',
         template: '<div class="fullsize"'+
                        'style="background-image:    url(\'{{src}}\'); ' +
